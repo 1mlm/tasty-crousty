@@ -93,7 +93,7 @@ export function Footer() {
             href="/assignment"
             className="text-muted-foreground/50 hover:text-primary transition-colors"
           >
-            ENG 2303 — Assignment Requirements
+            ENG 2303; Assignment Requirements
           </Link>
         </div>
       </div>

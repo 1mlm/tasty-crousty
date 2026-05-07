@@ -1,10 +1,16 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Icon } from "@/shadcn/cpns/Icon"
-import { icons } from "@/app/data/ui"
+import { useState } from "react";
+import { icons } from "@/app/data/ui";
+import { Icon } from "@/shadcn/cpns/Icon";
 
-const categories = ["Food Quality", "Service", "Atmosphere", "Website", "Other"]
+const categories = [
+  "Food Quality",
+  "Service",
+  "Atmosphere",
+  "Website",
+  "Other",
+];
 
 const confettiColors = [
   "bg-primary",
@@ -13,21 +19,24 @@ const confettiColors = [
   "bg-yellow-400",
   "bg-red-400",
   "bg-pink-400",
-]
+];
 
 const confettiPieces = Array.from({ length: 30 }, (_, i) => ({
   id: i,
   color: confettiColors[i % confettiColors.length],
   left: `${(i * 37) % 100}%`,
   delay: `${(i * 0.12) % 1.4}s`,
-  duration: `${0.8 + (i * 0.07) % 0.8}s`,
+  duration: `${0.8 + ((i * 0.07) % 0.8)}s`,
   size: i % 3 === 0 ? "size-3" : "size-2",
   rotate: `${(i * 47) % 360}deg`,
-}))
+}));
 
 function Confetti() {
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+    <div
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+      aria-hidden
+    >
       {confettiPieces.map((p) => (
         <span
           key={p.id}
@@ -46,17 +55,13 @@ function Confetti() {
         }
       `}</style>
     </div>
-  )
+  );
 }
 
 function CheckmarkCircle() {
   return (
     <div className="mx-auto mb-6 flex size-20 items-center justify-center rounded-full bg-primary/15">
-      <svg
-        viewBox="0 0 52 52"
-        className="size-12 text-primary"
-        aria-hidden
-      >
+      <svg viewBox="0 0 52 52" className="size-12 text-primary" aria-hidden>
         <circle
           cx="26"
           cy="26"
@@ -90,36 +95,36 @@ function CheckmarkCircle() {
         `}</style>
       </svg>
     </div>
-  )
+  );
 }
 
 export default function FeedbackPage() {
-  const [rating, setRating] = useState(0)
-  const [hovered, setHovered] = useState(0)
-  const [category, setCategory] = useState("")
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
-  const [sending, setSending] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
+  const [rating, setRating] = useState(0);
+  const [hovered, setHovered] = useState(0);
+  const [category, setCategory] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [sending, setSending] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    if (!message.trim()) return
-    setSending(true)
+    e.preventDefault();
+    if (!message.trim()) return;
+    setSending(true);
     setTimeout(() => {
-      setSending(false)
-      setSubmitted(true)
-    }, 1400)
+      setSending(false);
+      setSubmitted(true);
+    }, 1400);
   }
 
   function reset() {
-    setRating(0)
-    setCategory("")
-    setName("")
-    setEmail("")
-    setMessage("")
-    setSubmitted(false)
+    setRating(0);
+    setCategory("");
+    setName("");
+    setEmail("");
+    setMessage("");
+    setSubmitted(false);
   }
 
   return (
@@ -129,7 +134,7 @@ export default function FeedbackPage() {
           Share Your Feedback
         </h1>
         <p className="mt-3 text-muted-foreground">
-          Help us get better — every message is read by our team.
+          Help us get better; every message is read by our team.
         </p>
       </div>
 
@@ -137,13 +142,18 @@ export default function FeedbackPage() {
         {submitted ? (
           <div
             className="relative overflow-hidden rounded-3xl bg-card p-10 text-center ring-1 ring-foreground/8"
-            style={{ animation: "successIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both" }}
+            style={{
+              animation: "successIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both",
+            }}
           >
             <Confetti />
             <CheckmarkCircle />
-            <h2 className="mb-2 text-2xl font-bold text-foreground">Thank you! 🎉</h2>
+            <h2 className="mb-2 text-2xl font-bold text-foreground">
+              Thank you! 🎉
+            </h2>
             <p className="mb-6 text-muted-foreground">
-              Your feedback has been received. We really appreciate you taking the time.
+              Your feedback has been received. We really appreciate you taking
+              the time.
             </p>
             <button
               type="button"
@@ -168,7 +178,10 @@ export default function FeedbackPage() {
             {/* Name + Email */}
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-1.5">
-                <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                <label
+                  htmlFor="name"
+                  className="text-xs font-semibold uppercase tracking-wide text-muted-foreground"
+                >
                   Name
                 </label>
                 <input
@@ -181,7 +194,10 @@ export default function FeedbackPage() {
                 />
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                <label
+                  htmlFor="email"
+                  className="text-xs font-semibold uppercase tracking-wide text-muted-foreground"
+                >
                   Email
                 </label>
                 <input
@@ -206,11 +222,10 @@ export default function FeedbackPage() {
                     key={cat}
                     type="button"
                     onClick={() => setCategory(cat === category ? "" : cat)}
-                    className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors ${
-                      category === cat
+                    className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors ${category === cat
                         ? "bg-primary text-primary-foreground"
                         : "bg-background text-muted-foreground ring-1 ring-border hover:bg-primary/10 hover:text-primary"
-                    }`}
+                      }`}
                   >
                     {cat}
                   </button>
@@ -235,11 +250,10 @@ export default function FeedbackPage() {
                     aria-label={`${star} star${star > 1 ? "s" : ""}`}
                   >
                     <span
-                      className={`transition-colors duration-150 ${
-                        star <= (hovered || rating)
+                      className={`transition-colors duration-150 ${star <= (hovered || rating)
                           ? "text-primary"
                           : "text-muted-foreground/30"
-                      }`}
+                        }`}
                     >
                       ★
                     </span>
@@ -255,7 +269,10 @@ export default function FeedbackPage() {
 
             {/* Message */}
             <div className="space-y-1.5">
-              <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              <label
+                htmlFor="message"
+                className="text-xs font-semibold uppercase tracking-wide text-muted-foreground"
+              >
                 Message <span className="text-primary">*</span>
               </label>
               <textarea
@@ -299,5 +316,5 @@ export default function FeedbackPage() {
         )}
       </div>
     </div>
-  )
+  );
 }

@@ -1,8 +1,6 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Outfit } from "next/font/google"
-import { ChatDialog } from "@/app/components/ChatDialog"
-import { Footer } from "@/app/components/Footer"
-import { Navbar } from "@/app/components/Navbar"
+import { LayoutShell } from "@/app/components/LayoutShell"
 import "../styles/globals.css"
 
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-sans" })
@@ -31,10 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={outfit.variable}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <ChatDialog />
+        <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
   )

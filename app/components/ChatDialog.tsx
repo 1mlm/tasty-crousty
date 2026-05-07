@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { config } from "@/app/data/config"
@@ -28,23 +29,23 @@ function getBotReply(input: string): string | "RATING_PROMPT" {
     return `We're open Mon-Fri ${config.hours.weekdays} and Sat-Sun ${config.hours.weekends}. See you soon! ⏰`
   }
   if (/address|location|where|find|map|directions/.test(msg)) {
-    return `We're at ${config.address}. Drop by anytime — we'd love to see you! 📍`
+    return `We're at ${config.address}. Drop by anytime; we'd love to see you! 📍`
   }
   if (/phone|call|number|contact/.test(msg)) {
     return `You can reach us at ${config.phone} or email us at ${config.email}. 📞`
   }
   if (/recommend|suggest|what.*good|what.*try|best|popular/.test(msg)) {
     const item = randomPopularItem()
-    return `Try our [menu:${item.name}] — ${item.description}. Check the [link:full menu] for more! 🍔`
+    return `Try our [menu:${item.name}]; ${item.description}. Check the [link:full menu] for more! 🍔`
   }
   if (/price|cost|how much|cheap|expensive|menu/.test(msg)) {
-    return `Our menu starts from $1.99! Check the [link:full menu] — something for every appetite. 🍔`
+    return `Our menu starts from $1.99! Check the [link:full menu]; something for every appetite. 🍔`
   }
   if (/order|delivery|pickup|takeaway|take.away/.test(msg)) {
     return `We offer dine-in and takeaway. Call us at [tel:${config.phone}] to place an order ahead of time! 🛍️`
   }
   if (/vegan|vegetarian|veggie|plant/.test(msg)) {
-    return "We have a delicious Veggie Burger on the menu — plant-based patty, avocado, chipotle mayo. 🌿 Check the [link:full menu]!"
+    return "We have a delicious Veggie Burger on the menu; plant-based patty, avocado, chipotle mayo. 🌿 Check the [link:full menu]!"
   }
   if (/allergen|allergy|gluten|nut|dairy/.test(msg)) {
     return `For detailed allergen info, call us at [tel:${config.phone}] so our team can help you safely.`
@@ -141,7 +142,7 @@ function StarRatingPrompt({ onRate }: { onRate: (stars: number) => void }) {
 
 const ratingLabels: Record<number, string> = {
   1: "We're sorry to hear that. We'll do better. 🙏",
-  2: "Thanks for the feedback — we're always improving. 💪",
+  2: "Thanks for the feedback; we're always improving. 💪",
   3: "Appreciated! We'll keep working on it. 😊",
   4: "Great to hear! Thanks for visiting. 🎉",
   5: "You made our day! See you next time. 🍔❤️",
@@ -154,7 +155,7 @@ export function ChatDialog() {
       id: 0,
       from: "bot",
       type: "text",
-      text: "Hi! 👋 I'm the Tasty Crousty assistant. Ask about our hours, menu, location, or type 'feedback' to leave a rating!",
+      text: "Hey! 👋 I'm Pousty, your Tasty Crousty assistant. Ask me about our hours, menu, location, or type 'feedback' to leave a rating!",
     },
   ])
   const [input, setInput] = useState("")
@@ -223,11 +224,11 @@ export function ChatDialog() {
         aria-label="Open chat"
         onClick={() => setOpen(true)}
         className={cn(
-          "fixed bottom-5 right-5 z-50 flex size-14 items-center justify-center rounded-full bg-primary text-2xl shadow-lg shadow-primary/40 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/50 active:scale-95",
+          "fixed bottom-5 right-5 z-50 flex size-14 items-center justify-center rounded-full bg-primary shadow-lg shadow-primary/40 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/50 active:scale-95",
           open && "pointer-events-none opacity-0 scale-75"
         )}
       >
-        💬
+        <Image src="/icon.png" alt="Pousty" width={36} height={36} className="rounded-full object-cover" />
       </button>
 
       {/* Chat panel */}
@@ -243,10 +244,10 @@ export function ChatDialog() {
         {/* Header */}
         <div className="flex items-center justify-between bg-primary px-4 py-3">
           <div className="flex items-center gap-2">
-            <span className="text-lg">🍔</span>
+            <Image src="/icon.png" alt="Pousty" width={32} height={32} className="rounded-full object-cover ring-2 ring-primary-foreground/30" />
             <div>
-              <p className="text-sm font-semibold text-primary-foreground">Tasty Crousty</p>
-              <p className="text-xs text-primary-foreground/70">Usually replies instantly</p>
+              <p className="text-sm font-semibold text-primary-foreground">Pousty 🐔</p>
+              <p className="text-xs text-primary-foreground/70">Tasty Crousty assistant</p>
             </div>
           </div>
           <button

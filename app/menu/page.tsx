@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { MenuSection } from "@/app/components/MenuSection"
 
 export const metadata: Metadata = {
-  title: "Menu — Tasty Crousty",
+  title: "Menu; Tasty Crousty",
   description: "Browse our full menu of burgers, sides, drinks, and desserts.",
 }
 
@@ -14,7 +14,7 @@ export default function MenuPage() {
           Our Menu
         </h1>
         <p className="mt-3 text-muted-foreground">
-          Everything made fresh — pick your favourite
+          Everything made fresh; pick your favourite
         </p>
       </div>
       <MenuSection showFilters />

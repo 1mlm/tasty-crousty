@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Assignment Compliance — Tasty Crousty",
-  description: "ENG 2303 Final Project — requirement checklist for Tasty Crousty.",
+  title: "Assignment Compliance; Tasty Crousty",
+  description: "ENG 2303 Final Project; requirement checklist for Tasty Crousty.",
 }
 
 const requirements = [
@@ -11,7 +11,7 @@ const requirements = [
     id: 1,
     requirement: "Design a professional website for your business or organization.",
     result:
-      "Tasty Crousty — a fast food burger restaurant. Consistent branding (warm orange/yellow palette, Outfit typeface), professional layout across all pages.",
+      "Tasty Crousty; a fast food burger restaurant. Consistent branding (warm orange/yellow palette, Outfit typeface), professional layout across all pages.",
     links: [{ label: "Home", href: "/" }],
   },
   {
@@ -82,7 +82,7 @@ export default function AssignmentPage() {
     <div className="min-h-screen">
       <div className="bg-gradient-to-b from-primary/15 to-background px-4 py-14 text-center">
         <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">
-          ENG 2303 — Final Project
+          ENG 2303; Final Project
         </p>
         <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">
           Assignment Requirements
@@ -96,11 +96,10 @@ export default function AssignmentPage() {
         {requirements.map((req) => (
           <div
             key={req.id}
-            className={`rounded-2xl p-6 ring-1 ${
-              req.highlight
+            className={`rounded-2xl p-6 ring-1 ${req.highlight
                 ? "bg-primary/5 ring-primary/30"
                 : "bg-card ring-foreground/8"
-            }`}
+              }`}
           >
             <div className="mb-3 flex items-start gap-3">
               <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">

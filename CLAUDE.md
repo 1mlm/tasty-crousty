@@ -1,4 +1,4 @@
-# Tasty Crousty — Project Context
+# Tasty Crousty; Project Context
 
 ## What this is
 Restaurant website for ENG 2303 Final Project assessment. Built on `1mlm/nextjs-template`.
@@ -18,7 +18,7 @@ Restaurant website for ENG 2303 Final Project assessment. Built on `1mlm/nextjs-
 2. Clear, concise content adapted to audience
 3. Sections: services, client info, contact
 4. Functional **hyperlinks** (inter-page + external)
-5. **Chat / dialog box** — clients ask questions, write messages, or evaluate service
+5. **Chat / dialog box**; clients ask questions, write messages, or evaluate service
 6. Mobile-first
 
 ## Tech stack (from template)
@@ -32,20 +32,20 @@ Restaurant website for ENG 2303 Final Project assessment. Built on `1mlm/nextjs-
 ## Template file layout
 ```
 app/
-  layout.tsx       — fonts: Outfit (--font-sans), Geist, Geist Mono
-  page.tsx         — currently renders <ComponentExample />, REPLACE THIS
+  layout.tsx      ; fonts: Outfit (--font-sans), Geist, Geist Mono
+  page.tsx        ; currently renders <ComponentExample />, REPLACE THIS
   favicon.ico
 shadcn/
-  ui/              — Button, Card, Input, Textarea, Badge, etc.
-  cpns/Icon.tsx    — <Icon icon={XxxIcon} strokeWidth={2} />
-  lib/utils.ts     — cn() helper
-  examples/        — demo only, ignore
+  ui/             ; Button, Card, Input, Textarea, Badge, etc.
+  cpns/Icon.tsx   ; <Icon icon={XxxIcon} strokeWidth={2} />
+  lib/utils.ts    ; cn() helper
+  examples/       ; demo only, ignore
 styles/
-  globals.css      — Tailwind + shadcn imports, oklch CSS vars (currently violet theme)
+  globals.css     ; Tailwind + shadcn imports, oklch CSS vars (currently violet theme)
 ```
 
 ## What still needs to be built (nothing done yet)
-User wants a **config-driven** site — arrays/objects the user can edit to change:
+User wants a **config-driven** site; arrays/objects the user can edit to change:
 - Menu items (name, price, description, category, which HugeIcon)
 - Nav links
 - Restaurant info (hours, address, social links)
@@ -54,21 +54,21 @@ User wants a **config-driven** site — arrays/objects the user can edit to chan
 ```
 app/
   data/
-    config.ts      — restaurant info, hours, social links
-    menu.ts        — menu items array (name, price, desc, category, icon)
-    nav.ts         — nav links array
+    config.ts     ; restaurant info, hours, social links
+    menu.ts       ; menu items array (name, price, desc, category, icon)
+    nav.ts        ; nav links array
   components/
     Navbar.tsx
     Hero.tsx
-    MenuSection.tsx   — renders from menu.ts array
-    ChatDialog.tsx    — shadcn dialog, feedback/chat form
+    MenuSection.tsx  ; renders from menu.ts array
+    ChatDialog.tsx   ; shadcn dialog, feedback/chat form
     Footer.tsx
-  page.tsx            — Home (Hero + featured menu + CTA)
-  menu/page.tsx       — Full menu page
-  about/page.tsx      — About page
-  contact/page.tsx    — Contact + embedded chat
+  page.tsx           ; Home (Hero + featured menu + CTA)
+  menu/page.tsx      ; Full menu page
+  about/page.tsx     ; About page
+  contact/page.tsx   ; Contact + embedded chat
 styles/
-  globals.css         — update --primary to orange/yellow oklch values
+  globals.css        ; update --primary to orange/yellow oklch values
 ```
 
 ## globals.css current state

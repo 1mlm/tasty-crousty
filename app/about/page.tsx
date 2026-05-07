@@ -3,7 +3,7 @@ import Link from "next/link"
 import { config } from "@/app/data/config"
 
 export const metadata: Metadata = {
-  title: "About — Tasty Crousty",
+  title: "About; Tasty Crousty",
   description: "Learn about the story and people behind Tasty Crousty.",
 }
 
