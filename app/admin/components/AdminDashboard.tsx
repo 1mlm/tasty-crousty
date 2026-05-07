@@ -5,8 +5,9 @@ import type { IconSvgElement } from "@hugeicons/react"
 import {
   ArrowLeft01Icon,
   ArrowReloadHorizontalIcon,
-  GlobeIcon,
   BarChartIcon,
+  GlobeIcon,
+  Menu01Icon,
   Cancel01Icon,
   Chat01Icon,
   CheckmarkCircle01Icon,
@@ -110,7 +111,7 @@ function DonutChart({
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <p className="text-sm font-semibold text-[#3D2B1F]">{title}</p>
+      <p className="text-sm font-semibold text-foreground">{title}</p>
       <div className="relative">
         <svg width="100" height="100" viewBox="0 0 100 100" aria-label={title} role="img">
           {total === 0 ? (
@@ -153,7 +154,7 @@ function DonutChart({
             x="50"
             y="54"
             textAnchor="middle"
-            style={{ fontSize: 14, fontWeight: 700, fill: "#3D2B1F" }}
+            className="fill-foreground" style={{ fontSize: 14, fontWeight: 700 }}
           >
             {total}
           </text>
@@ -166,8 +167,8 @@ function DonutChart({
               className="size-2.5 shrink-0 rounded-full"
               style={{ background: seg.color }}
             />
-            <span className="text-[#3D2B1F]/60">{seg.label}</span>
-            <span className="ml-auto pl-4 font-semibold text-[#3D2B1F]">
+            <span className="text-muted-foreground">{seg.label}</span>
+            <span className="ml-auto pl-4 font-semibold text-foreground">
               {seg.value}
             </span>
           </div>
@@ -193,15 +194,15 @@ function StatCard({
   iconBg: string
 }) {
   return (
-    <div className="rounded-2xl border border-[#FF8C42]/10 bg-white p-5 shadow-sm">
+    <div className="rounded-2xl border border-[#FF8C42]/10 bg-card p-5 shadow-sm">
       <div className="mb-3 flex items-center gap-3">
         <div className={cn("flex size-10 items-center justify-center rounded-xl", iconBg)}>
           <Icon icon={IconComp} className="size-5 text-white" />
         </div>
-        <span className="text-sm text-[#3D2B1F]/50">{label}</span>
+        <span className="text-sm text-muted-foreground">{label}</span>
       </div>
-      <p className="text-2xl font-bold text-[#3D2B1F]">{value}</p>
-      <p className="mt-0.5 text-xs text-[#3D2B1F]/40">{sub}</p>
+      <p className="text-2xl font-bold text-foreground">{value}</p>
+      <p className="mt-0.5 text-xs text-muted-foreground">{sub}</p>
     </div>
   )
 }
@@ -273,10 +274,10 @@ function OrdersTable({ orders }: { orders: Order[] }) {
   const [pending, startTransition] = useTransition()
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-[#FF8C42]/10 bg-white shadow-sm">
+    <div className="overflow-hidden rounded-2xl border border-[#FF8C42]/10 bg-card shadow-sm">
       <div className="flex items-center gap-2 border-b border-[#FF8C42]/10 px-6 py-4">
         <Icon icon={ShoppingCart01Icon} className="size-5 text-[#FF8C42]" />
-        <h3 className="font-semibold text-[#3D2B1F]">Orders</h3>
+        <h3 className="font-semibold text-foreground">Orders</h3>
         <span className="ml-auto rounded-full bg-[#FF8C42]/10 px-2.5 py-0.5 text-xs font-semibold text-[#FF8C42]">
           {orders.length}
         </span>
@@ -284,7 +285,7 @@ function OrdersTable({ orders }: { orders: Order[] }) {
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-gray-100 bg-gray-50/60 text-left text-xs font-semibold uppercase tracking-wide text-[#3D2B1F]/40">
+            <tr className="border-b border-gray-100 bg-muted/60 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               <th className="px-6 py-3">ID</th>
               <th className="px-4 py-3">Customer</th>
               <th className="px-4 py-3">Items</th>
@@ -300,32 +301,32 @@ function OrdersTable({ orders }: { orders: Order[] }) {
               <tr
                 key={order.id}
                 className={cn(
-                  "border-b border-gray-50 transition-colors hover:bg-[#FFFBF0]/60",
-                  i % 2 === 0 ? "bg-white" : "bg-gray-50/20"
+                  "border-b border-gray-50 transition-colors hover:bg-accent/10",
+                  i % 2 === 0 ? "bg-card" : "bg-muted/20"
                 )}
               >
-                <td className="px-6 py-3 font-mono text-xs text-[#3D2B1F]/40">{order.id}</td>
+                <td className="px-6 py-3 font-mono text-xs text-muted-foreground">{order.id}</td>
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-2">
                     <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#FF8C42]/10">
                       <Icon icon={User02Icon} className="size-3.5 text-[#FF8C42]" />
                     </div>
-                    <span className="font-medium text-[#3D2B1F]">{order.customer}</span>
+                    <span className="font-medium text-foreground">{order.customer}</span>
                   </div>
                 </td>
                 <td className="max-w-[180px] px-4 py-3">
-                  <p className="truncate text-xs text-[#3D2B1F]/60">
+                  <p className="truncate text-xs text-muted-foreground">
                     {order.items.join(", ")}
                   </p>
                 </td>
                 <td className="px-4 py-3">
                   <StatusBadge status={order.status} />
                 </td>
-                <td className="px-4 py-3 font-semibold text-[#3D2B1F]">{order.total} MAD</td>
+                <td className="px-4 py-3 font-semibold text-foreground">{order.total} MAD</td>
                 <td className="px-4 py-3">
                   <BoolIcon value={order.isPaid} />
                 </td>
-                <td className="px-4 py-3 text-xs text-[#3D2B1F]/40">
+                <td className="px-4 py-3 text-xs text-muted-foreground">
                   {new Date(order.time).toLocaleTimeString("en-US", {
                     hour: "2-digit",
                     minute: "2-digit",
@@ -377,7 +378,7 @@ function OrdersTable({ orders }: { orders: Order[] }) {
           </tbody>
         </table>
         {orders.length === 0 && (
-          <div className="flex flex-col items-center gap-2 py-12 text-[#3D2B1F]/30">
+          <div className="flex flex-col items-center gap-2 py-12 text-muted-foreground/60">
             <Icon icon={ShoppingCart01Icon} className="size-8" />
             <p className="text-sm">No orders yet</p>
           </div>
@@ -393,10 +394,10 @@ function FeedbackTable({ feedback }: { feedback: FeedbackEntry[] }) {
   const [pending, startTransition] = useTransition()
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-[#FF8C42]/10 bg-white shadow-sm">
+    <div className="overflow-hidden rounded-2xl border border-[#FF8C42]/10 bg-card shadow-sm">
       <div className="flex items-center gap-2 border-b border-[#FF8C42]/10 px-6 py-4">
         <Icon icon={Chat01Icon} className="size-5 text-[#FF8C42]" />
-        <h3 className="font-semibold text-[#3D2B1F]">Customer Feedback</h3>
+        <h3 className="font-semibold text-foreground">Customer Feedback</h3>
         <span className="ml-auto rounded-full bg-[#FF8C42]/10 px-2.5 py-0.5 text-xs font-semibold text-[#FF8C42]">
           {feedback.length}
         </span>
@@ -404,7 +405,7 @@ function FeedbackTable({ feedback }: { feedback: FeedbackEntry[] }) {
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-gray-100 bg-gray-50/60 text-left text-xs font-semibold uppercase tracking-wide text-[#3D2B1F]/40">
+            <tr className="border-b border-gray-100 bg-muted/60 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               <th className="px-6 py-3">User</th>
               <th className="px-4 py-3">Rating</th>
               <th className="px-4 py-3">Message</th>
@@ -418,8 +419,8 @@ function FeedbackTable({ feedback }: { feedback: FeedbackEntry[] }) {
               <tr
                 key={fb.id}
                 className={cn(
-                  "border-b border-gray-50 transition-colors hover:bg-[#FFFBF0]/60",
-                  i % 2 === 0 ? "bg-white" : "bg-gray-50/20"
+                  "border-b border-gray-50 transition-colors hover:bg-accent/10",
+                  i % 2 === 0 ? "bg-card" : "bg-muted/20"
                 )}
               >
                 <td className="px-6 py-3">
@@ -427,19 +428,19 @@ function FeedbackTable({ feedback }: { feedback: FeedbackEntry[] }) {
                     <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#FF8C42]/10">
                       <Icon icon={User02Icon} className="size-3.5 text-[#FF8C42]" />
                     </div>
-                    <span className="font-medium text-[#3D2B1F]">@{fb.username}</span>
+                    <span className="font-medium text-foreground">@{fb.username}</span>
                   </div>
                 </td>
                 <td className="px-4 py-3">
                   <Stars rating={fb.rating} />
                 </td>
                 <td className="max-w-[260px] px-4 py-3">
-                  <p className="line-clamp-2 text-xs text-[#3D2B1F]/60">{fb.message}</p>
+                  <p className="line-clamp-2 text-xs text-muted-foreground">{fb.message}</p>
                 </td>
                 <td className="px-4 py-3">
                   <BoolIcon value={fb.satisfied} />
                 </td>
-                <td className="px-4 py-3 text-xs text-[#3D2B1F]/40">{fb.date}</td>
+                <td className="px-4 py-3 text-xs text-muted-foreground">{fb.date}</td>
                 <td className="px-4 py-3">
                   <button
                     type="button"
@@ -456,7 +457,7 @@ function FeedbackTable({ feedback }: { feedback: FeedbackEntry[] }) {
           </tbody>
         </table>
         {feedback.length === 0 && (
-          <div className="flex flex-col items-center gap-2 py-12 text-[#3D2B1F]/30">
+          <div className="flex flex-col items-center gap-2 py-12 text-muted-foreground/60">
             <Icon icon={Chat01Icon} className="size-8" />
             <p className="text-sm">No feedback yet</p>
           </div>
@@ -472,10 +473,10 @@ function UsersTable({ users }: { users: User[] }) {
   const [pending, startTransition] = useTransition()
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-[#FF8C42]/10 bg-white shadow-sm">
+    <div className="overflow-hidden rounded-2xl border border-[#FF8C42]/10 bg-card shadow-sm">
       <div className="flex items-center gap-2 border-b border-[#FF8C42]/10 px-6 py-4">
         <Icon icon={UserGroupIcon} className="size-5 text-[#FF8C42]" />
-        <h3 className="font-semibold text-[#3D2B1F]">Users</h3>
+        <h3 className="font-semibold text-foreground">Users</h3>
         <span className="ml-auto rounded-full bg-[#FF8C42]/10 px-2.5 py-0.5 text-xs font-semibold text-[#FF8C42]">
           {users.length}
         </span>
@@ -483,7 +484,7 @@ function UsersTable({ users }: { users: User[] }) {
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-gray-100 bg-gray-50/60 text-left text-xs font-semibold uppercase tracking-wide text-[#3D2B1F]/40">
+            <tr className="border-b border-gray-100 bg-muted/60 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               <th className="px-6 py-3">User</th>
               <th className="px-4 py-3">Email</th>
               <th className="px-4 py-3">Role</th>
@@ -497,8 +498,8 @@ function UsersTable({ users }: { users: User[] }) {
               <tr
                 key={user.id}
                 className={cn(
-                  "border-b border-gray-50 transition-colors hover:bg-[#FFFBF0]/60",
-                  i % 2 === 0 ? "bg-white" : "bg-gray-50/20"
+                  "border-b border-gray-50 transition-colors hover:bg-accent/10",
+                  i % 2 === 0 ? "bg-card" : "bg-muted/20"
                 )}
               >
                 <td className="px-6 py-3">
@@ -507,19 +508,19 @@ function UsersTable({ users }: { users: User[] }) {
                       <Icon icon={User02Icon} className="size-4 text-[#FF8C42]" />
                     </div>
                     <div>
-                      <p className="font-medium text-[#3D2B1F]">{user.username}</p>
-                      <p className="text-xs text-[#3D2B1F]/40 font-mono">{user.id}</p>
+                      <p className="font-medium text-foreground">{user.username}</p>
+                      <p className="text-xs text-muted-foreground font-mono">{user.id}</p>
                     </div>
                   </div>
                 </td>
-                <td className="px-4 py-3 text-xs text-[#3D2B1F]/60">{user.email}</td>
+                <td className="px-4 py-3 text-xs text-muted-foreground">{user.email}</td>
                 <td className="px-4 py-3">
                   <RoleBadge userRole={user.role} />
                 </td>
                 <td className="px-4 py-3">
                   <BoolIcon value={user.isActive} />
                 </td>
-                <td className="px-4 py-3 text-xs text-[#3D2B1F]/40">{user.joinedAt}</td>
+                <td className="px-4 py-3 text-xs text-muted-foreground">{user.joinedAt}</td>
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-1.5">
                     <button
@@ -632,38 +633,38 @@ function OverviewTab({ data }: { data: DB }) {
 
       {/* Charts */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div className="rounded-2xl border border-[#FF8C42]/10 bg-white p-6 shadow-sm">
+        <div className="rounded-2xl border border-[#FF8C42]/10 bg-card p-6 shadow-sm">
           <DonutChart segments={orderStatusSegments} title="Orders by Status" />
         </div>
-        <div className="rounded-2xl border border-[#FF8C42]/10 bg-white p-6 shadow-sm">
+        <div className="rounded-2xl border border-[#FF8C42]/10 bg-card p-6 shadow-sm">
           <DonutChart segments={categorySegments} title="Sales by Category" />
         </div>
       </div>
 
       {/* Recent orders preview */}
-      <div className="rounded-2xl border border-[#FF8C42]/10 bg-white shadow-sm">
+      <div className="rounded-2xl border border-[#FF8C42]/10 bg-card shadow-sm">
         <div className="flex items-center gap-2 border-b border-[#FF8C42]/10 px-6 py-4">
           <Icon icon={Clock01Icon} className="size-4 text-[#FF8C42]" />
-          <h3 className="text-sm font-semibold text-[#3D2B1F]">Recent Orders</h3>
+          <h3 className="text-sm font-semibold text-foreground">Recent Orders</h3>
         </div>
         <div className="divide-y divide-gray-50">
           {data.orders.slice(0, 5).map((order) => (
             <div
               key={order.id}
-              className="flex items-center gap-3 px-6 py-3 hover:bg-[#FFFBF0]/60"
+              className="flex items-center gap-3 px-6 py-3 hover:bg-accent/10"
             >
               <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#FF8C42]/10">
                 <Icon icon={User02Icon} className="size-3.5 text-[#FF8C42]" />
               </div>
               <div className="min-w-0 flex-1">
-                <p className="text-sm font-medium text-[#3D2B1F]">{order.customer}</p>
-                <p className="truncate text-xs text-[#3D2B1F]/40">
+                <p className="text-sm font-medium text-foreground">{order.customer}</p>
+                <p className="truncate text-xs text-muted-foreground">
                   {order.items.slice(0, 2).join(", ")}
                   {order.items.length > 2 ? ` +${order.items.length - 2}` : ""}
                 </p>
               </div>
               <StatusBadge status={order.status} />
-              <span className="shrink-0 text-sm font-semibold text-[#3D2B1F]">
+              <span className="shrink-0 text-sm font-semibold text-foreground">
                 {order.total} MAD
               </span>
             </div>
@@ -683,103 +684,139 @@ interface AdminDashboardProps {
 
 export function AdminDashboard({ data, showConfetti }: AdminDashboardProps) {
   const [tab, setTab] = useState<Tab>("overview")
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+
+  function selectTab(id: Tab) {
+    setTab(id)
+    setSidebarOpen(false)
+  }
+
+  const sidebarContent = (
+    <>
+      {/* Logo */}
+      <div className="flex items-center gap-2.5 border-b border-white/10 px-5 py-5">
+        <div className="flex size-8 items-center justify-center rounded-lg bg-[#FF8C42]">
+          <Icon icon={Hamburger01Icon} className="size-4 text-white" />
+        </div>
+        <div>
+          <p className="text-sm font-bold leading-tight">Tasty Crousty</p>
+          <p className="text-[10px] text-white/40">Admin Panel</p>
+        </div>
+      </div>
+
+      {/* Nav */}
+      <nav className="flex-1 space-y-0.5 px-3 py-4">
+        {SIDEBAR_TABS.map(({ id, label, icon: TabIcon }) => (
+          <button
+            key={id}
+            type="button"
+            onClick={() => selectTab(id)}
+            className={cn(
+              "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
+              tab === id
+                ? "bg-[#FF8C42] text-white"
+                : "text-white/50 hover:bg-white/5 hover:text-white"
+            )}
+          >
+            <Icon icon={TabIcon} className="size-4 shrink-0" />
+            {label}
+            {id === "orders" && (
+              <span className="ml-auto rounded-full bg-white/20 px-1.5 py-0.5 text-[10px] font-semibold">
+                {data.orders.length}
+              </span>
+            )}
+            {id === "feedback" && (
+              <span className="ml-auto rounded-full bg-white/20 px-1.5 py-0.5 text-[10px] font-semibold">
+                {data.feedback.length}
+              </span>
+            )}
+          </button>
+        ))}
+      </nav>
+
+      {/* Footer */}
+      <div className="space-y-0.5 border-t border-white/10 px-3 py-4">
+        <a
+          href="/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-white/40 transition-colors hover:bg-white/5 hover:text-white"
+        >
+          <Icon icon={GlobeIcon} className="size-4 shrink-0" />
+          View Site
+        </a>
+        <a
+          href="/"
+          className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-white/40 transition-colors hover:bg-white/5 hover:text-white"
+        >
+          <Icon icon={ArrowLeft01Icon} className="size-4 shrink-0" />
+          Back to Site
+        </a>
+      </div>
+    </>
+  )
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#FFFBF0]">
+    <div className="flex h-screen overflow-hidden bg-background">
       {showConfetti && <Confetti />}
 
-      {/* Sidebar */}
-      <aside className="flex w-56 shrink-0 flex-col bg-[#1C1917] text-white">
-        {/* Logo */}
-        <div className="flex items-center gap-2.5 border-b border-white/10 px-5 py-5">
-          <div className="flex size-8 items-center justify-center rounded-lg bg-[#FF8C42]">
-            <Icon icon={Hamburger01Icon} className="size-4 text-white" />
-          </div>
-          <div>
-            <p className="text-sm font-bold leading-tight">Tasty Crousty</p>
-            <p className="text-[10px] text-white/40">Admin Panel</p>
-          </div>
-        </div>
+      {/* Mobile backdrop */}
+      {sidebarOpen && (
+        <button
+          type="button"
+          aria-label="Close menu"
+          className="fixed inset-0 z-40 bg-black/50 md:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
 
-        {/* Nav */}
-        <nav className="flex-1 space-y-0.5 px-3 py-4">
-          {SIDEBAR_TABS.map(({ id, label, icon: TabIcon }) => (
-            <button
-              key={id}
-              type="button"
-              onClick={() => setTab(id)}
-              className={cn(
-                "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
-                tab === id
-                  ? "bg-[#FF8C42] text-white"
-                  : "text-white/50 hover:bg-white/5 hover:text-white"
-              )}
-            >
-              <Icon icon={TabIcon} className="size-4 shrink-0" />
-              {label}
-              {id === "orders" && (
-                <span className="ml-auto rounded-full bg-white/20 px-1.5 py-0.5 text-[10px] font-semibold">
-                  {data.orders.length}
-                </span>
-              )}
-              {id === "feedback" && (
-                <span className="ml-auto rounded-full bg-white/20 px-1.5 py-0.5 text-[10px] font-semibold">
-                  {data.feedback.length}
-                </span>
-              )}
-            </button>
-          ))}
-        </nav>
-
-        {/* Footer */}
-        <div className="border-t border-white/10 px-3 py-4 space-y-0.5">
-          <a
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-white/40 transition-colors hover:bg-white/5 hover:text-white"
-          >
-            <Icon icon={GlobeIcon} className="size-4 shrink-0" />
-            View Site
-          </a>
-          <a
-            href="/"
-            className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-white/40 transition-colors hover:bg-white/5 hover:text-white"
-          >
-            <Icon icon={ArrowLeft01Icon} className="size-4 shrink-0" />
-            Back to Site
-          </a>
-        </div>
+      {/* Sidebar — overlay on mobile, static on desktop */}
+      <aside
+        className={cn(
+          "fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-[#1C1917] text-white transition-transform duration-200 md:static md:w-56 md:translate-x-0 md:shrink-0",
+          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
+        {sidebarContent}
       </aside>
 
       {/* Main content */}
       <div className="flex flex-1 flex-col overflow-hidden">
         {/* Top bar */}
-        <header className="flex shrink-0 items-center justify-between border-b border-[#FF8C42]/10 bg-white/80 px-6 py-3 backdrop-blur-sm">
-          <div>
-            <h1 className="text-base font-bold text-[#3D2B1F] capitalize">{tab}</h1>
-            <p className="text-xs text-[#3D2B1F]/40">
-              {new Date().toLocaleDateString("en-US", {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </p>
-          </div>
-          <div className="flex items-center gap-2.5">
-            <div className="flex items-center gap-2 rounded-xl bg-[#FFFBF0] px-3 py-2">
-              <div className="flex size-6 items-center justify-center rounded-full bg-[#FF8C42]">
-                <Icon icon={User02Icon} className="size-3.5 text-white" />
-              </div>
-              <span className="text-sm font-semibold text-[#3D2B1F]">admin</span>
-              <RoleBadge userRole="admin" />
+        <header className="flex shrink-0 items-center justify-between border-b border-[#FF8C42]/10 bg-card/80 px-4 py-3 backdrop-blur-sm md:px-6">
+          <div className="flex items-center gap-3">
+            {/* Hamburger — mobile only */}
+            <button
+              type="button"
+              aria-label="Open menu"
+              onClick={() => setSidebarOpen(true)}
+              className="flex size-8 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted md:hidden"
+            >
+              <Icon icon={Menu01Icon} className="size-5" />
+            </button>
+            <div>
+              <h1 className="text-base font-bold text-foreground capitalize">{tab}</h1>
+              <p className="hidden text-xs text-muted-foreground sm:block">
+                {new Date().toLocaleDateString("en-US", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </p>
             </div>
+          </div>
+          <div className="flex items-center gap-2 rounded-xl bg-muted/60 px-2.5 py-1.5 md:px-3 md:py-2">
+            <div className="flex size-6 items-center justify-center rounded-full bg-[#FF8C42]">
+              <Icon icon={User02Icon} className="size-3.5 text-white" />
+            </div>
+            <span className="hidden text-sm font-semibold text-foreground sm:block">admin</span>
+            <RoleBadge userRole="admin" />
           </div>
         </header>
 
         {/* Tab content */}
-        <main className="flex-1 overflow-y-auto p-6">
+        <main className="flex-1 overflow-y-auto p-4 md:p-6">
           {tab === "overview" && <OverviewTab data={data} />}
           {tab === "orders" && <OrdersTable orders={data.orders} />}
           {tab === "feedback" && <FeedbackTable feedback={data.feedback} />}
