@@ -1,6 +1,7 @@
 import {
   ArrowRight01Icon,
   CallIcon,
+  Chat01Icon,
   Clock01Icon,
   Coffee01Icon,
   CustomerServiceIcon,
@@ -26,6 +27,7 @@ export const icons = {
     "/menu": Menu01Icon,
     "/about": InformationCircleIcon,
     "/contact": CustomerServiceIcon,
+    "/feedback": Chat01Icon,
     "/assignment": Note01Icon,
   },
 
