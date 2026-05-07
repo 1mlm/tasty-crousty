@@ -155,14 +155,6 @@
   ],
   "feedback": [
     {
-      "id": "FB-001",
-      "username": "youssef_a",
-      "rating": 5,
-      "message": "Best burger in Ifrane! The Classic Crousty is absolutely divine. Will definitely come back every week.",
-      "satisfied": true,
-      "date": "2026-05-06"
-    },
-    {
       "id": "FB-002",
       "username": "fatima_z",
       "rating": 4,
