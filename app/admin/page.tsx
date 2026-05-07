@@ -36,15 +36,15 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#FFFBF0] px-4">
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="mb-8 flex flex-col items-center gap-2">
           <div className="flex size-16 items-center justify-center rounded-2xl bg-[#FF8C42] shadow-lg shadow-[#FF8C42]/30">
             <Icon icon={Hamburger01Icon} className="size-8 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-[#3D2B1F]">Tasty Crousty</h1>
-          <p className="flex items-center gap-1.5 text-sm text-[#3D2B1F]/50">
+          <h1 className="text-2xl font-bold text-foreground">Tasty Crousty</h1>
+          <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
             <Icon icon={LockIcon} className="size-3.5" />
             Staff access only
           </p>
@@ -53,20 +53,20 @@ export default function AdminLoginPage() {
         {/* Card */}
         <form
           onSubmit={handleSubmit}
-          className="rounded-2xl border border-[#FF8C42]/20 bg-white px-8 py-8 shadow-xl shadow-black/5"
+          className="rounded-2xl border border-[#FF8C42]/20 bg-card px-8 py-8 shadow-xl shadow-black/5"
         >
-          <h2 className="mb-6 text-lg font-semibold text-[#3D2B1F]">Sign in to Admin Panel</h2>
+          <h2 className="mb-6 text-lg font-semibold text-foreground">Sign in to Admin Panel</h2>
 
           {/* Username */}
           <div className="mb-4">
             <label
               htmlFor="username"
-              className="mb-1.5 block text-sm font-medium text-[#3D2B1F]/70"
+              className="mb-1.5 block text-sm font-medium text-foreground/70"
             >
               Username
             </label>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#3D2B1F]/30">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground/60">
                 <Icon icon={User02Icon} className="size-4" />
               </span>
               <input
@@ -76,7 +76,7 @@ export default function AdminLoginPage() {
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="admin"
                 autoComplete="username"
-                className="w-full rounded-xl border border-[#FF8C42]/20 bg-[#FFFBF0] py-2.5 pl-9 pr-3 text-sm text-[#3D2B1F] placeholder:text-[#3D2B1F]/30 focus:border-[#FF8C42]/60 focus:outline-none focus:ring-2 focus:ring-[#FF8C42]/20"
+                className="w-full rounded-xl border border-[#FF8C42]/20 bg-muted py-2.5 pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-[#FF8C42]/60 focus:outline-none focus:ring-2 focus:ring-[#FF8C42]/20"
               />
             </div>
           </div>
@@ -85,12 +85,12 @@ export default function AdminLoginPage() {
           <div className="mb-5">
             <label
               htmlFor="password"
-              className="mb-1.5 block text-sm font-medium text-[#3D2B1F]/70"
+              className="mb-1.5 block text-sm font-medium text-foreground/70"
             >
               Password
             </label>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#3D2B1F]/30">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground/60">
                 <Icon icon={LockIcon} className="size-4" />
               </span>
               <input
@@ -100,12 +100,12 @@ export default function AdminLoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••"
                 autoComplete="current-password"
-                className="w-full rounded-xl border border-[#FF8C42]/20 bg-[#FFFBF0] py-2.5 pl-9 pr-10 text-sm text-[#3D2B1F] placeholder:text-[#3D2B1F]/30 focus:border-[#FF8C42]/60 focus:outline-none focus:ring-2 focus:ring-[#FF8C42]/20"
+                className="w-full rounded-xl border border-[#FF8C42]/20 bg-muted py-2.5 pl-9 pr-10 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-[#FF8C42]/60 focus:outline-none focus:ring-2 focus:ring-[#FF8C42]/20"
               />
               <button
                 type="button"
                 onClick={() => setShowPass(!showPass)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#3D2B1F]/30 hover:text-[#3D2B1F]/60"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/60 hover:text-muted-foreground"
               >
                 <Icon icon={showPass ? ViewOffIcon : EyeIcon} className="size-4" />
               </button>
@@ -131,7 +131,7 @@ export default function AdminLoginPage() {
         </form>
 
         {/* Back link */}
-        <p className="mt-6 text-center text-xs text-[#3D2B1F]/40">
+        <p className="mt-6 text-center text-xs text-muted-foreground">
           <a href="/" className="hover:text-[#FF8C42] hover:underline">
             ← Back to Tasty Crousty
           </a>
