@@ -18,9 +18,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Tasty Crousty — Burgers worth the detour",
+  title: "Tasty Crousty: Burgers worth the detour",
   description:
-    "Fast, fresh, and full of flavour — Tasty Crousty serves handcrafted burgers and comfort food made to order in Ifrane, Morocco.",
+    "Fast, fresh, and full of flavour; Tasty Crousty serves handcrafted burgers and comfort food made to order in Ifrane, Morocco.",
 }
 
 export default function RootLayout({
