@@ -2,6 +2,8 @@ import Link from "next/link"
 import { Hero } from "@/app/components/Hero"
 import { MenuSection } from "@/app/components/MenuSection"
 import { config } from "@/app/data/config"
+import { icons } from "@/app/data/ui"
+import { Icon } from "@/shadcn/cpns/Icon"
 
 export default function HomePage() {
   return (
@@ -22,9 +24,11 @@ export default function HomePage() {
         <div className="pb-12 text-center">
           <Link
             href="/menu"
-            className="rounded-xl border border-primary px-6 py-2.5 text-sm font-semibold text-primary hover:bg-primary/10 transition-colors"
+            className="inline-flex items-center gap-2 rounded-xl border border-primary px-6 py-2.5 text-sm font-semibold text-primary hover:bg-primary/10 transition-colors"
           >
-            View Full Menu →
+            <Icon icon={icons.nav["/menu"]} className="size-4" />
+            View Full Menu
+            <Icon icon={icons.arrowRight} className="size-4" />
           </Link>
         </div>
       </div>
@@ -77,14 +81,16 @@ export default function HomePage() {
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <Link
             href="/menu"
-            className="rounded-xl bg-primary-foreground px-7 py-3 font-semibold text-primary hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary-foreground px-7 py-3 font-semibold text-primary hover:opacity-90 transition-opacity"
           >
+            <Icon icon={icons.orderNow} className="size-5" />
             Browse Menu
           </Link>
           <Link
             href="/contact"
-            className="rounded-xl border border-primary-foreground/40 px-7 py-3 font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
+            className="inline-flex items-center gap-2 rounded-xl border border-primary-foreground/40 px-7 py-3 font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
           >
+            <Icon icon={icons.location} className="size-5" />
             Get Directions
           </Link>
         </div>

@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { config } from "@/app/data/config"
+import { icons } from "@/app/data/ui"
+import { Icon } from "@/shadcn/cpns/Icon"
 
 export function Hero() {
   return (
@@ -16,7 +18,7 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-3xl text-center">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/15 px-4 py-1.5 text-sm font-medium text-primary">
-          <span>🔥</span>
+          <Icon icon={icons.popular} className="size-4" />
           <span>Now serving Ifrane's favourite burgers</span>
         </div>
 
@@ -34,29 +36,31 @@ export function Hero() {
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <Link
             href="/menu"
-            className="rounded-xl bg-primary px-7 py-3 text-base font-semibold text-primary-foreground shadow-md shadow-primary/30 transition-all hover:opacity-90 hover:shadow-lg hover:shadow-primary/40 active:scale-95"
+            className="flex items-center gap-2 rounded-xl bg-primary px-7 py-3 text-base font-semibold text-primary-foreground shadow-md shadow-primary/30 transition-all hover:opacity-90 hover:shadow-lg hover:shadow-primary/40 active:scale-95"
           >
+            <Icon icon={icons.orderNow} className="size-5" />
             See the Menu
           </Link>
           <Link
             href="/contact"
-            className="rounded-xl border border-border bg-card px-7 py-3 text-base font-medium text-foreground transition-colors hover:bg-primary/10 hover:text-primary"
+            className="flex items-center gap-2 rounded-xl border border-border bg-card px-7 py-3 text-base font-medium text-foreground transition-colors hover:bg-primary/10 hover:text-primary"
           >
+            <Icon icon={icons.location} className="size-5" />
             Find Us
           </Link>
         </div>
 
         <div className="mt-10 flex justify-center gap-8 text-sm text-muted-foreground">
           <div className="flex items-center gap-1.5">
-            <span className="text-base">⭐</span>
+            <Icon icon={icons.categories.desserts} className="size-4 text-primary" />
             <span>4.9 / 5 rating</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="text-base">🚀</span>
+            <Icon icon={icons.popular} className="size-4 text-primary" />
             <span>Made to order</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="text-base">🌿</span>
+            <Icon icon={icons.categories.sides} className="size-4 text-primary" />
             <span>Fresh ingredients</span>
           </div>
         </div>

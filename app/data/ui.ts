@@ -13,6 +13,7 @@ import {
   Location01Icon,
   Mail01Icon,
   Menu01Icon,
+  Note01Icon,
   SentIcon,
   ShoppingCart01Icon,
   StarIcon,
@@ -25,6 +26,7 @@ export const icons = {
     "/menu": Menu01Icon,
     "/about": InformationCircleIcon,
     "/contact": CustomerServiceIcon,
+    "/assignment": Note01Icon,
   },
 
   // Social
@@ -35,9 +37,9 @@ export const icons = {
   orderNow: ShoppingCart01Icon,
   arrowRight: ArrowRight01Icon,
   send: SentIcon,
+  location: Location01Icon,
 
   // Contact details
-  location: Location01Icon,
   phone: CallIcon,
   email: Mail01Icon,
   clock: Clock01Icon,
