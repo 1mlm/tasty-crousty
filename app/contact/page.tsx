@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import { config } from "@/app/data/config"
 
 export const metadata: Metadata = {
-  title: "Contact — Tasty Crousty",
-  description: "Find Tasty Crousty — address, phone, email, and opening hours.",
+  title: "Contact; Tasty Crousty",
+  description: "Find Tasty Crousty; address, phone, email, and opening hours.",
 }
 
 export default function ContactPage() {
@@ -95,8 +95,24 @@ export default function ContactPage() {
 
           {/* Social + map placeholder */}
           <div className="space-y-4">
-            <div className="flex h-52 items-center justify-center rounded-2xl bg-accent/30 text-6xl ring-1 ring-foreground/8">
-              🗺️
+            <div className="overflow-hidden rounded-2xl ring-1 ring-foreground/8">
+              <iframe
+                title="Tasty Crousty location"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-5.1450%2C33.5220%2C-5.1250%2C33.5340&layer=mapnik&marker=33.5280%2C-5.1350"
+                width="100%"
+                height="220"
+                style={{ border: 0, display: "block" }}
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
+              <a
+                href={`https://www.openstreetmap.org/?mlat=33.5280&mlon=-5.1350#map=15/33.5280/-5.1350`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 bg-accent/20 py-2 text-xs font-medium text-primary hover:bg-accent/40 transition-colors"
+              >
+                🗺️ Open larger map
+              </a>
             </div>
             <div className="rounded-2xl bg-card p-5 ring-1 ring-foreground/8">
               <h3 className="mb-3 font-semibold text-foreground">Follow Us</h3>

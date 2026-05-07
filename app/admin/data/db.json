@@ -1,0 +1,304 @@
+{
+  "orders": [
+    {
+      "id": "ORD-001",
+      "customer": "Youssef Alami",
+      "items": [
+        "Classic Crousty Burger",
+        "Crispy Fries",
+        "Cola"
+      ],
+      "status": "delivered",
+      "total": 89,
+      "time": "2026-05-07T08:14:00Z",
+      "isPaid": true
+    },
+    {
+      "id": "ORD-002",
+      "customer": "Fatima Zahra",
+      "items": [
+        "Double Smash Burger",
+        "Onion Rings"
+      ],
+      "status": "preparing",
+      "total": 75,
+      "time": "2026-05-07T09:02:00Z",
+      "isPaid": true
+    },
+    {
+      "id": "ORD-003",
+      "customer": "Mehdi Berrada",
+      "items": [
+        "Spicy Inferno Burger",
+        "Crispy Fries",
+        "Milkshake Vanille"
+      ],
+      "status": "pending",
+      "total": 115,
+      "time": "2026-05-07T09:31:00Z",
+      "isPaid": false
+    },
+    {
+      "id": "ORD-004",
+      "customer": "Salma Tahiri",
+      "items": [
+        "Veggie Crousty",
+        "Sweet Potato Fries",
+        "Lemonade"
+      ],
+      "status": "ready",
+      "total": 82,
+      "time": "2026-05-07T09:47:00Z",
+      "isPaid": true
+    },
+    {
+      "id": "ORD-005",
+      "customer": "Adam El Fassi",
+      "items": [
+        "Bacon Melt Burger",
+        "Nuggets x6",
+        "Iced Tea"
+      ],
+      "status": "cancelled",
+      "total": 98,
+      "time": "2026-05-07T10:05:00Z",
+      "isPaid": false
+    },
+    {
+      "id": "ORD-006",
+      "customer": "Nadia Chraibi",
+      "items": [
+        "Classic Crousty Burger",
+        "Coleslaw"
+      ],
+      "status": "delivered",
+      "total": 61,
+      "time": "2026-05-07T10:22:00Z",
+      "isPaid": true
+    },
+    {
+      "id": "ORD-007",
+      "customer": "Omar Benali",
+      "items": [
+        "Double Smash Burger",
+        "Crispy Fries",
+        "Milkshake Chocolat",
+        "Brownie"
+      ],
+      "status": "delivered",
+      "total": 134,
+      "time": "2026-05-07T10:45:00Z",
+      "isPaid": true
+    },
+    {
+      "id": "ORD-008",
+      "customer": "Leila Moussaoui",
+      "items": [
+        "Spicy Inferno Burger",
+        "Onion Rings",
+        "Cola"
+      ],
+      "status": "delivered",
+      "total": 91,
+      "time": "2026-05-07T11:03:00Z",
+      "isPaid": false
+    },
+    {
+      "id": "ORD-009",
+      "customer": "Karim Idrissi",
+      "items": [
+        "Crousty Kids Meal"
+      ],
+      "status": "pending",
+      "total": 45,
+      "time": "2026-05-07T11:18:00Z",
+      "isPaid": false
+    },
+    {
+      "id": "ORD-010",
+      "customer": "Amina Elhachimi",
+      "items": [
+        "Bacon Melt Burger",
+        "Sweet Potato Fries",
+        "Lemonade"
+      ],
+      "status": "ready",
+      "total": 97,
+      "time": "2026-05-07T11:34:00Z",
+      "isPaid": true
+    },
+    {
+      "id": "ORD-011",
+      "customer": "Hassan Tazi",
+      "items": [
+        "Veggie Crousty",
+        "Crispy Fries"
+      ],
+      "status": "delivered",
+      "total": 58,
+      "time": "2026-05-07T11:52:00Z",
+      "isPaid": true
+    },
+    {
+      "id": "ORD-012",
+      "customer": "Rim Bensouda",
+      "items": [
+        "Double Smash Burger",
+        "Nuggets x6",
+        "Milkshake Fraise"
+      ],
+      "status": "preparing",
+      "total": 118,
+      "time": "2026-05-07T12:10:00Z",
+      "isPaid": true
+    }
+  ],
+  "feedback": [
+    {
+      "id": "FB-001",
+      "username": "youssef_a",
+      "rating": 5,
+      "message": "Best burger in Ifrane! The Classic Crousty is absolutely divine. Will definitely come back every week.",
+      "satisfied": true,
+      "date": "2026-05-06"
+    },
+    {
+      "id": "FB-002",
+      "username": "fatima_z",
+      "rating": 4,
+      "message": "Very good burgers, fresh ingredients. Waited a bit longer than expected but worth it.",
+      "satisfied": true,
+      "date": "2026-05-06"
+    },
+    {
+      "id": "FB-003",
+      "username": "mehdi_b",
+      "rating": 5,
+      "message": "The Spicy Inferno burger is no joke 🔥 Perfect level of heat. Staff was super friendly too.",
+      "satisfied": true,
+      "date": "2026-05-05"
+    },
+    {
+      "id": "FB-004",
+      "username": "salma_t",
+      "rating": 3,
+      "message": "The veggie option was ok but could use more flavor. Fries were excellent though.",
+      "satisfied": false,
+      "date": "2026-05-05"
+    },
+    {
+      "id": "FB-005",
+      "username": "nadia_c",
+      "rating": 5,
+      "message": "Ordered online, delivery was fast and everything was hot. Packaging is really cute too!",
+      "satisfied": true,
+      "date": "2026-05-04"
+    },
+    {
+      "id": "FB-006",
+      "username": "omar_b",
+      "rating": 4,
+      "message": "Great value for money. The double smash burger hits different. Milkshakes are 10/10.",
+      "satisfied": true,
+      "date": "2026-05-04"
+    },
+    {
+      "id": "FB-007",
+      "username": "leila_m",
+      "rating": 2,
+      "message": "My order was missing the onion rings and it took 40 minutes. Hope it improves.",
+      "satisfied": false,
+      "date": "2026-05-03"
+    },
+    {
+      "id": "FB-008",
+      "username": "karim_i",
+      "rating": 4,
+      "message": "Kids loved the meal! Good portions for the price. Nice cozy atmosphere.",
+      "satisfied": true,
+      "date": "2026-05-03"
+    },
+    {
+      "id": "FB-009",
+      "username": "amina_e",
+      "rating": 5,
+      "message": "Honestly one of the best fast food experiences I've had in Morocco. Keep it up!",
+      "satisfied": true,
+      "date": "2026-05-02"
+    },
+    {
+      "id": "FB-010",
+      "username": "hassan_t",
+      "rating": 3,
+      "message": "Decent burgers but nothing extraordinary. The location is convenient though.",
+      "satisfied": false,
+      "date": "2026-05-01"
+    }
+  ],
+  "users": [
+    {
+      "id": "USR-001",
+      "username": "admin",
+      "email": "admin@tastycrousty.ma",
+      "role": "admin",
+      "joinedAt": "2025-01-15",
+      "isActive": true
+    },
+    {
+      "id": "USR-002",
+      "username": "chef_hassan",
+      "email": "h.tazi@tastycrousty.ma",
+      "role": "staff",
+      "joinedAt": "2025-02-01",
+      "isActive": true
+    },
+    {
+      "id": "USR-003",
+      "username": "cashier_rim",
+      "email": "r.bensouda@tastycrousty.ma",
+      "role": "staff",
+      "joinedAt": "2025-03-10",
+      "isActive": true
+    },
+    {
+      "id": "USR-004",
+      "username": "youssef_a",
+      "email": "youssef.alami@email.com",
+      "role": "customer",
+      "joinedAt": "2025-04-20",
+      "isActive": true
+    },
+    {
+      "id": "USR-005",
+      "username": "fatima_z",
+      "email": "fatima.zahra@email.com",
+      "role": "customer",
+      "joinedAt": "2025-05-05",
+      "isActive": true
+    },
+    {
+      "id": "USR-006",
+      "username": "mehdi_b",
+      "email": "mehdi.berrada@email.com",
+      "role": "customer",
+      "joinedAt": "2025-06-12",
+      "isActive": false
+    },
+    {
+      "id": "USR-007",
+      "username": "salma_t",
+      "email": "salma.tahiri@email.com",
+      "role": "customer",
+      "joinedAt": "2025-07-08",
+      "isActive": true
+    },
+    {
+      "id": "USR-008",
+      "username": "omar_b",
+      "email": "omar.benali@email.com",
+      "role": "customer",
+      "joinedAt": "2025-09-30",
+      "isActive": false
+    }
+  ]
+}

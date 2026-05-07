@@ -44,7 +44,7 @@ export default function HomePage() {
               {
                 icon: "🥩",
                 title: "Fresh Every Day",
-                desc: "We prep our patties fresh daily — never frozen, never rushed.",
+                desc: "We prep our patties fresh daily; never frozen, never rushed.",
               },
               {
                 icon: "⚡",
